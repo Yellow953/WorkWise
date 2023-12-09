@@ -2,6 +2,7 @@
 
 @section('content')
 <div id="page-inner">
+    @include('layouts._flash')
     <div class="row">
         <div class="col-md-12">
             <h2>Admin Dashboard</h2>

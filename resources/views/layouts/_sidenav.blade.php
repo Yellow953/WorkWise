@@ -18,6 +18,7 @@
                     </svg>
                     <span>Dashboard</span></a>
             </li>
+            @if(auth()->user()->role == 'admin')
             <li>
                 <a href="/users" class="{{ request()->is('users') ? 'active-menu' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -45,6 +46,7 @@
                     </svg>
                     Jobs</a>
             </li>
+            @endif
         </ul>
     </div>
 </nav>

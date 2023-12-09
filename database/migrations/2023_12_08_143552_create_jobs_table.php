@@ -11,7 +11,10 @@ return new class extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('position')->nullable();
-            $table->string('requirements')->nullable();
+            $table->string('location')->nullable();
+            $table->string('industry')->nullable();
+            $table->string('job_type')->nullable();
+            $table->string('experience_level')->nullable();
 
             $table->bigInteger("company_id")->unsigned();
             $table->timestamps();
