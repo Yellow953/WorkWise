@@ -3,12 +3,12 @@
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <li class="text-center">
-                <a href="/profile" class="{{ request()->is('profile') ? 'active-menu' : '' }}">
+                <a href="/profile">
                     <img src="{{ asset('assets/img/find_user.png')}}" class="user-image img-responsive" />
                 </a>
             </li>
             <li>
-                <a href="/" class="{{ request()->is('dashboard') ? 'active-menu' : '' }}">
+                <a href="/" class="{{ request()->is('/') ? 'active-menu' : '' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         class="bi bi-speedometer" viewBox="0 0 16 16">
                         <path
