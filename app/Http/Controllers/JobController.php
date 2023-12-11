@@ -70,4 +70,9 @@ class JobController extends Controller
         $job->delete();
         return redirect('/jobs')->with('danger', "Job deleted successfully");
     }
+
+    public function users(Job $job)
+    {
+        return view('jobs.users', compact('job'));
+    }
 }

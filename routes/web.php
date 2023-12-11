@@ -17,6 +17,7 @@ Route::prefix('/users')->group(function () {
     Route::get('/{user}/edit', [App\Http\Controllers\UserController::class, 'edit']);
     Route::post('/{user}/update', [App\Http\Controllers\UserController::class, 'update']);
     Route::get('/{user}/destroy', [App\Http\Controllers\UserController::class, 'destroy']);
+    Route::get('/{user}/download_cv', [App\Http\Controllers\UserController::class, 'download_cv']);
     Route::get('/new', [App\Http\Controllers\UserController::class, 'new']);
     Route::post('/create', [App\Http\Controllers\UserController::class, 'create']);
     Route::get('/', [App\Http\Controllers\UserController::class, 'index'])->name('users');
@@ -33,6 +34,7 @@ Route::prefix('/companies')->group(function () {
 });
 
 Route::prefix('/jobs')->group(function () {
+    Route::get('/{job}/users', [App\Http\Controllers\JobController::class, 'users']);
     Route::get('/{job}/show', [App\Http\Controllers\JobController::class, 'show']);
     Route::post('/{job}/apply', [App\Http\Controllers\JobController::class, 'apply']);
     Route::get('/{job}/edit', [App\Http\Controllers\JobController::class, 'edit']);

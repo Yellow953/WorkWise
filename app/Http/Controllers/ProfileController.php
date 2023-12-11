@@ -32,6 +32,15 @@ class ProfileController extends Controller
             $request->all()
         );
 
+        if ($request->hasFile('cv')) {
+            $file = $request->file('cv');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $ext;
+            $file->move('uploads/cv/', $filename);
+            $user->cv = '/uploads/cv/' . $filename;
+        }
+        $user->save();
+
         return redirect()->back()->with('success', 'Profile updated successfully...');
     }
 

@@ -98,10 +98,8 @@
     </div>
     <!--End Content-->
     <div class="footer">
-        <a href="http://www.arjunamgain.com.np/" target="_blank"><i class="fa fa-link"></i><span>Website</span></a>
-        <a href="https://codepen.io/arjunamgain/" target="_blank"><i class="fa fa-codepen"></i><span>My Pen</span></a>
-        <a href="https://twitter.com/arjunamgain" target="_blank"><i class="fa fa-twitter"></i><span>Follow</span></a>
-        <a href="mailto:mr.arjunamgain@gmail.com" target="_blank"><i class="fa fa-briefcase"></i><span>Hire
+        <a href="tel::{{ $user->phone }}" target="_blank"><i class="fa fa-phone"></i><span>Phone</span></a>
+        <a href="mailto:{{ $user->email }}" target="_blank"><i class="fa fa-briefcase"></i><span>Email
                 me</span></a>
     </div>
 </div>

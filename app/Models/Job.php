@@ -18,7 +18,7 @@ class Job extends Model
 
     public function applied_users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'applied_jobs');
     }
 
     // Filter

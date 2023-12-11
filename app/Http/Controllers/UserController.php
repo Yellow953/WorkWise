@@ -65,7 +65,18 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-
         return redirect('/users')->with('danger', "User deleted successfully");
+    }
+
+    public function download_cv(User $user)
+    {
+        $publicPath = public_path();
+        $filePath = $publicPath . $user->cv;
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath);
+        } else {
+            return response()->json(['error' => 'File not found.'], 404);
+        }
     }
 }
