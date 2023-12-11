@@ -43,7 +43,7 @@ class ProfileController extends Controller
             return back()->with("danger", "Old Password Doesn't match!");
         }
 
-        if ($request->new_password == $request->confirm_password) {
+        if ($request->new_password == $request->new_password_confirmation) {
             $user->password = Hash::make($request->new_password);
             $user->save();
             return redirect()->back()->with('success', "Your password has been changed");

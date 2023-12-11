@@ -21,7 +21,8 @@
                                         <select name="company_id" class="form-control">
                                             <option value="" selected></option>
                                             @foreach ($companies as $company)
-                                            <option value="{{$compant->id}}" {{request()->query('company_id')==$company->id ? 'selected' : ''}}>
+                                            <option value="{{$company->id}}" {{request()->
+                                                query('company_id')==$company->id ? 'selected' : ''}}>
                                                 {{$company->name}}
                                             </option>
                                             @endforeach
@@ -31,7 +32,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="position" class="form-label">Position</label>
-                                        <input type="text" name="position" class="form-control" placeholder="Position" value="{{request()->query('position')}}">
+                                        <input type="text" name="position" class="form-control" placeholder="Position"
+                                            value="{{request()->query('position')}}">
                                     </div>
                                 </div>
                             </div>
@@ -40,13 +42,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="industry" class="form-label">Industry</label>
-                                        <input type="text" name="industry" class="form-control" placeholder="Industry" value="{{request()->query('industry')}}">
+                                        <input type="text" name="industry" class="form-control" placeholder="Industry"
+                                            value="{{request()->query('industry')}}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="location" class="form-label">Location</label>
-                                        <input type="text" name="location" class="form-control" placeholder="Position" value="{{request()->query('location')}}">
+                                        <input type="text" name="location" class="form-control" placeholder="Position"
+                                            value="{{request()->query('location')}}">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +70,8 @@
                                             <option value="marketing_manager">Marketing Manager</option>
                                             <option value="financial_analyst">Financial Analyst</option>
                                             <option value="human_resources_manager">Human Resources Manager</option>
-                                            <option value="customer_support_representative">Customer Support Representative</option>
+                                            <option value="customer_support_representative">Customer Support
+                                                Representative</option>
                                             <option value="sales_representative">Sales Representative</option>
                                             <option value="teacher">Teacher</option>
                                             <option value="nurse">Nurse</option>
@@ -77,13 +82,16 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                   <div class="form-group">
+                                    <div class="form-group">
                                         <label for="experiecne_level" class="form-label">Experience Level</label>
                                         <select name="experiecne_level" class="form-control">
                                             <option value="" selected></option>
-                                            <option value="training" {{request()->query('experiecne_level')=='training' ? 'selected' : ''}}>Training</option>    
-                                            <option value="junior" {{request()->query('experiecne_level')=='junior' ? 'selected' : ''}}>Junior</option>
-                                            <option value="senior" {{request()->query('experiecne_level')=='senior' ? 'selected' : ''}}>Senior</option>
+                                            <option value="training" {{request()->query('experiecne_level')=='training'
+                                                ? 'selected' : ''}}>Training</option>
+                                            <option value="junior" {{request()->query('experiecne_level')=='junior' ?
+                                                'selected' : ''}}>Junior</option>
+                                            <option value="senior" {{request()->query('experiecne_level')=='senior' ?
+                                                'selected' : ''}}>Senior</option>
                                         </select>
                                     </div>
                                 </div>

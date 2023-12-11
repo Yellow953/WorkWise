@@ -34,7 +34,7 @@ class JobController extends Controller
             'industry' => 'required|string|max:255',
             'job_type' => 'required|string|max:255',
             'experience_level' => 'required|string|max:255',
-            'company_id' => ['required', 'number', 'min:0'],
+            'company_id' => ['required', 'numeric', 'min:0'],
         ]);
 
         $job = Job::create($request->all());
@@ -57,7 +57,7 @@ class JobController extends Controller
             'industry' => 'required|string|max:255',
             'job_type' => 'required|string|max:255',
             'experience_level' => 'required|string|max:255',
-            'company_id' => ['required', 'number', 'min:0'],
+            'company_id' => ['required', 'numeric', 'min:0'],
         ]);
 
         $job->update($request->all());

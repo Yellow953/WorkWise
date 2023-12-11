@@ -21,35 +21,78 @@
         </div>
         <div class="edit animated zoomIn">
             <div class="avatar">
-
                 <div class="bubble">
-                    <h3>Edit Profile</h3>
-                    <a href="#">View Details </a>
+                    <h3 class="text-bold">Edit Profile</h3>
+                    <form action="/profile/update" method="POST" enctype="multipart/form-data" class="text-left">
+                        @csrf
+                        <div class="form-group">
+                            <label>Name*</label>
+                            <input type="text" class="form-control" name="name" value="{{ $user->name }}" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number*</label>
+                            <input type="text" class="form-control" name="phone" value="{{ $user->phone }}" required />
+                        </div>
+                        <div class="form-group">
+                            <label>CV</label>
+                            <input type="file" class="form-control" name="cv" value="{{ $user->cv }}" />
+                        </div>
 
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
         </div>
         <div class="password animated zoomIn">
             <div class="avatar">
 
                 <div class="bubble">
-                    <h3>Password</h3>
-                    <a href="#">View Details </a>
+                    <h3>Change Password</h3>
+                    <form action="/profile/save_password" method="POST" enctype="multipart/form-data" class="text-left">
+                        @csrf
+                        <div class="form-group">
+                            <label>Current Password*</label>
+                            <input type="password" class="form-control" name="current_password" required />
+                        </div>
+                        <div class="form-group">
+                            <label>New Password*</label>
+                            <input type="password" class="form-control" name="new_password" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password*</label>
+                            <input type="password" class="form-control" name="new_password_conformation" required />
+                        </div>
 
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
                 </div>
 
             </div>
         </div>
         <div class="applied_jobs animated zoomIn">
             <div class="avatar">
-
                 <div class="bubble">
                     <h3>Appplied Jobs</h3>
-                    <a href="#">View Details </a>
 
+                    @forelse ($user->applied_jobs as $aj)
+                    <div class="card">
+                        Company: {{ $aj->company->name }} <br>
+                        Position: {{ $aj->position }} <br>
+                        Location: {{ $aj->location }} <br>
+                        Industry: {{ $aj->industry }} <br>
+                        Job Type: {{ $aj->job_type }} <br>
+                        Experience Level: {{ $aj->experience_level }} <br>
+                    </div>
+                    @empty
+                    No Applied Jobs Yet ...
+                    @endforelse
                 </div>
-
             </div>
         </div>
     </div>

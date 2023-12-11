@@ -415,9 +415,9 @@ line-height: 1.428571429;
 
     /* ------------------------------------------------- */
     .wrap {
-        max-width: 80%;
-        min-height: 450px;
-        max-height: 450px;
+        max-width: 90%;
+        min-height: 500px;
+        max-height: 500px;
         margin: 50px auto;
         border-radius: 3px;
         position: relative;
@@ -638,4 +638,14 @@ line-height: 1.428571429;
 .pagination{
     display: flex;
     width: 100%;
+}
+
+.card{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    width: 100%;
+    border: 1px grey solid;
+    margin: 25px 0;
+    padding: 10px;
 }
