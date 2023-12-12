@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Job;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -74,5 +75,18 @@ class JobController extends Controller
     public function users(Job $job)
     {
         return view('jobs.users', compact('job'));
+    }
+
+    public function apply(Job $job)
+    {
+        $user = User::find(auth()->user()->id);
+
+        if ($user->applied_jobs->contains($job)) {
+            return redirect()->back()->with('danger', 'You have already applied to this job.');
+        }
+
+        $user->applied_jobs()->attach($job);
+
+        return redirect()->back()->with('success', 'You have successfully applied to this job.');
     }
 }

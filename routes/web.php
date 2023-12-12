@@ -34,6 +34,7 @@ Route::prefix('/companies')->group(function () {
 });
 
 Route::prefix('/jobs')->group(function () {
+    Route::get('/{job}/apply', [App\Http\Controllers\JobController::class, 'apply']);
     Route::get('/{job}/users', [App\Http\Controllers\JobController::class, 'users']);
     Route::get('/{job}/show', [App\Http\Controllers\JobController::class, 'show']);
     Route::post('/{job}/apply', [App\Http\Controllers\JobController::class, 'apply']);
@@ -49,4 +50,4 @@ Route::prefix('/jobs')->group(function () {
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'custom_logout'])->name('custom_logout');
 
 // Home
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
